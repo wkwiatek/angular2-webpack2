@@ -1,0 +1,31 @@
+{
+  "name": "angular2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot --quiet",
+    "build": "NODE_ENV=production webpack --progress --hide-modules"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.50",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-alpha.14",
+    "zone.js": "https://github.com/wkwiatek/zone.js/tarball/master"
+  },
+  "devDependencies": {
+    "babel-loader": "^5.3.2",
+    "css-loader": "^0.23.0",
+    "file-loader": "^0.8.4",
+    "raw-loader": "^0.5.1",
+    "stylus-loader": "^1.4.2",
+    "ts-loader": "^0.7.2",
+    "typescript": "^1.7.3",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
