@@ -1,10 +1,11 @@
 import {Component} from 'angular2/angular2';
+import {RouteConfig, RouterOutlet} from 'angular2/router';
+
+import {TestComponent} from './components/test';
 
 @Component({
   selector: 'app',
-  template: '<h1>start {{ test }}</h1>'
+  template: '<router-outlet></router-outlet>',
+  directives: [RouterOutlet]
 })
-export class App {
-  public test: string = 'test';
-  constructor() {}
-}
+export class App {}
