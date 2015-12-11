@@ -8,4 +8,7 @@ import {TestComponent} from './components/test';
   template: '<router-outlet></router-outlet>',
   directives: [RouterOutlet]
 })
+@RouteConfig([
+  { path: '/', component: TestComponent }
+])
 export class App {}
