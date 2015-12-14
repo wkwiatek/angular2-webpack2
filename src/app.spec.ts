@@ -1,6 +1,6 @@
 import {it, describe, expect, inject, beforeEachProviders, TestComponentBuilder} from 'angular2/testing';
-import {Type, provide} from 'angular2/angular2';
-import {Location, Router, RouteRegistry, ROUTER_PROVIDERS, ROUTER_PRIMARY_COMPONENT } from 'angular2/router';
+import {Type, provide} from 'angular2/core';
+import {Location, Router, RouteRegistry, ROUTER_PROVIDERS, ROUTER_PRIMARY_COMPONENT} from 'angular2/router';
 import {RootRouter} from 'angular2/src/router/router';
 
 import {SpyLocation} from 'angular2/src/mock/location_mock';
