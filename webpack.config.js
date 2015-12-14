@@ -22,7 +22,7 @@ module.exports = {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel', query: { stage: 0 } },
       { test: /\.ts$/, exclude: /node_modules/, loader: 'ts' },
-      { test: /\.styl$/, loader: 'raw!css!stylus' },
+      { test: /\.styl$/, loader: 'css!stylus' },
       { test: /\.css$/, loader: 'css' },
       { test: /\.png$/, loader: 'file' }
     ]
