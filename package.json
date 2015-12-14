@@ -18,12 +18,12 @@
   "author": "wkwiatek <wojtek.kwiatek@gmail.com>",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "angular2": "^2.0.0-alpha.50",
+    "angular2": "^2.0.0-alpha.53",
     "es6-promise": "^3.0.2",
-    "es6-shim": "^0.33.3",
-    "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-alpha.14",
-    "zone.js": "^0.5.8"
+    "es6-shim": "^0.33.13",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-alpha.14",
+    "zone.js": "^0.5.10"
   },
   "devDependencies": {
     "babel-loader": "^5.3.2",
