@@ -44,7 +44,8 @@ module.exports = function(config) {
       },
       module: {
         loaders: [
-          { test: /\.tsx?$/, exclude: /node_modules/, loader: 'ts' }
+          { test: /\.ts$/, exclude: /node_modules/, loader: 'ts' },
+          { test: /\.styl$/, loader: 'css!stylus' }
         ]
       },
       stats: { colors: true, reasons: true },
