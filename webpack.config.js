@@ -1,17 +1,7 @@
 var path = require('path');
 
 module.exports = {
-  entry: {
-    app: [
-      // Angular 2 Deps
-      'es6-shim',
-      'rxjs',
-      'zone.js',
-      'reflect-metadata',
-
-      './src/bootstrap'
-    ]
-  },
+  entry: './src/bootstrap',
   output: {
     filename: 'dist/bundle.js'   
   },
