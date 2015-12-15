@@ -20,7 +20,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel', query: { stage: 0 } },
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
       { test: /\.ts$/, exclude: /node_modules/, loader: 'ts' },
       { test: /\.html/, loader: 'raw' },
       { test: /\.styl$/, loader: 'css!stylus' },
