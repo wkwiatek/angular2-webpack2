@@ -22,7 +22,7 @@ module.exports = function(config) {
       { pattern: 'node_modules/rxjs/**', included: false, watched: false },
       { pattern: 'node_modules/angular2/**/*.js', included: false, watched: false },
 
-      { pattern: 'src/**/*.spec.ts', included: true }
+      { pattern: 'src/**/*.spec.js', included: true }
     ],
 
 
@@ -34,7 +34,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.spec.ts': ['webpack', 'sourcemap']
+      'src/**/*.spec.js': ['webpack', 'sourcemap']
     },
 
     webpack: {
