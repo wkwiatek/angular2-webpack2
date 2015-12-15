@@ -44,8 +44,12 @@ module.exports = function(config) {
       },
       module: {
         loaders: [
+          { test: /\.js$/, exclude: /node_modules/, loader: 'babel', query: { stage: 0 } },
           { test: /\.ts$/, exclude: /node_modules/, loader: 'ts' },
-          { test: /\.styl$/, loader: 'css!stylus' }
+          { test: /\.html/, loader: 'raw' },
+          { test: /\.styl$/, loader: 'css!stylus' },
+          { test: /\.css$/, loader: 'css' },
+          { test: /\.(gif|png|jpe?g)$/i, loader: 'file' }
         ]
       },
       stats: { colors: true, reasons: true },
