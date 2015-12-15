@@ -1,6 +1,7 @@
 var path = require('path');
+var webpack = require('webpack');
 
-module.exports = {
+var config = {
   entry: './src/bootstrap',
   output: {
     filename: 'dist/bundle.js'   
@@ -19,3 +20,26 @@ module.exports = {
     ]
   }
 };
+
+if (!(process.env.NODE_ENV === 'production')) {
+  config.devtool = 'source-map';
+  config.plugins = [
+    new webpack.DefinePlugin({
+      'NODE_ENV': '"dev"'
+    })
+  ]
+} else {
+  config.plugins = [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      comments: false
+    }),
+    new webpack.DefinePlugin({
+      'NODE_ENV': '"production"'
+    })
+  ];
+}
+
+module.exports = config;
