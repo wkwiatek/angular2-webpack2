@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production ./node_modules/.bin/webpack --progress --hide-modules",
-    "dev": "webpack-dev-server --inline --hot --quiet",
+    "dev": "webpack-dev-server --inline --hot --quiet --history-api-fallback",
     "e2e": "./node_modules/.bin/protractor",
     "postinstall": "npm run webdriver-update",
     "test": "./node_modules/.bin/karma start",
