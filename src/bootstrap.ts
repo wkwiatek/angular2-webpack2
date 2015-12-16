@@ -1,9 +1,11 @@
 /// <reference path="./typings/webpack.d.ts" />
 
 // Polyfills
-import 'core-js';
+import 'es6-promise';
+import 'es6-shim';
 import 'reflect-metadata';
 import 'zone.js';
+import './ie-shims/ie-shims';
 
 (<any>window).Zone = require('zone.js').Zone;
 
@@ -18,8 +20,6 @@ if (NODE_ENV === 'production') {
 
 import {bootstrap} from 'angular2/platform/browser';
 import {ROUTER_PROVIDERS} from 'angular2/router';
-
-import './ie-shims/ie-shims';
 
 import {App} from './app';
 
