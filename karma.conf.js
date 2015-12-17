@@ -14,10 +14,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'node_modules/zone.js/dist/zone-microtask.js',
-      'node_modules/zone.js/dist/long-stack-trace-zone.js',
-      'node_modules/zone.js/dist/jasmine-patch.js',
-      'node_modules/reflect-metadata/Reflect.js',
+      { pattern: 'node_modules/zone.js/dist/zone-microtask.js', included: true, watched: false },
+      { pattern: 'node_modules/zone.js/dist/long-stack-trace-zone.js', included: true, watched: false },
+      { pattern: 'node_modules/zone.js/dist/jasmine-patch.js', included: true, watched: false },
+      { pattern: 'node_modules/reflect-metadata/Reflect.js', included: true, watched: false },
 
       { pattern: 'node_modules/rxjs/**', included: false, watched: false },
       { pattern: 'node_modules/angular2/**/*.js', included: false, watched: false },
