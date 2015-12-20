@@ -2,9 +2,13 @@ var path = require('path');
 var webpack = require('webpack');
 
 var config = {
-  entry: './src/bootstrap',
+  devtool: 'source-map',
+  entry: {
+    'vendor': './src/vendor',
+    'app': './src/bootstrap' 
+  },
   output: {
-    filename: 'dist/bundle.js'   
+    filename: 'dist/[name].js'   
   },
   resolve: {
     extensions: ['', '.ts', '.es6', '.js', '.json']
@@ -22,7 +26,6 @@ var config = {
 };
 
 if (!(process.env.NODE_ENV === 'production')) {
-  config.devtool = 'source-map';
   config.plugins = [
     new webpack.DefinePlugin({
       'NODE_ENV': '"dev"'
