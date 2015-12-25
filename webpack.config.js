@@ -5,13 +5,13 @@ var config = {
   devtool: 'source-map',
   entry: {
     'vendor': './src/vendor',
-    'app': './src/bootstrap' 
+    'app': './src/bootstrap'
   },
   output: {
-    filename: 'dist/[name].js'   
+    filename: 'dist/[name].js'
   },
   resolve: {
-    extensions: ['', '.ts', '.es6', '.js', '.json']
+    extensions: ['', '.js', '.ts', '.es6', '.json']
   },
   module: {
     loaders: [
