@@ -7,7 +7,9 @@ import {SpyLocation} from 'angular2/src/mock/location_mock';
 
 import {App} from './app';
 
-require('angular2/src/platform/browser_common').initDomAdapter();
+import { setBaseTestProviders } from 'angular2/testing';
+import { TEST_BROWSER_PLATFORM_PROVIDERS, TEST_BROWSER_APPLICATION_PROVIDERS } from 'angular2/platform/testing/browser';
+setBaseTestProviders(TEST_BROWSER_PLATFORM_PROVIDERS, TEST_BROWSER_APPLICATION_PROVIDERS);
 
 describe('App', () => {
 
