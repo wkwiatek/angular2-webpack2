@@ -1,4 +1,4 @@
-import {it, describe, expect, inject, beforeEachProviders, TestComponentBuilder} from 'angular2/testing';
+import {it, describe, expect, inject, injectAsync, beforeEachProviders, TestComponentBuilder} from 'angular2/testing';
 import {Type, provide} from 'angular2/core';
 import {Location, Router, RouteRegistry, ROUTER_PROVIDERS, ROUTER_PRIMARY_COMPONENT} from 'angular2/router';
 import {RootRouter} from 'angular2/src/router/router';
@@ -21,9 +21,10 @@ describe('App', () => {
     provide(Router, {useClass: RootRouter})
   ]);
 
-  it('should be able to test', inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-    tcb.createAsync(App).then((componentFixture) => {
+  it('should be able to test', injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
+    return tcb.createAsync(App).then((componentFixture) => {
       componentFixture.detectChanges();
+      expect(true).toBe(true);
     });
   }));
 
