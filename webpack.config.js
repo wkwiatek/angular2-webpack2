@@ -14,7 +14,8 @@ var config = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
-      { test: /\.ts$/, exclude: /node_modules/, loader: 'ts' },
+      // Due to zone.js node_modules can't be excluded for ts
+      { test: /\.ts$/, loader: 'ts' },
       { test: /\.html/, loader: 'html?minimize=false' },
       { test: /\.styl$/, loader: 'raw!stylus' },
       { test: /\.css$/, loader: 'style!css' },
