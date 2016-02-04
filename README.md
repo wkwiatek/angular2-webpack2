@@ -1,6 +1,6 @@
-# angular2-webpack
+# angular2-webpack2
 
-Angular 2 webpack minimal starter. Includes both unit and e2e tests.
+Angular 2 Webpack 2 minimal starter. Includes both unit and e2e tests.
 
 Running in dev mode:
 ```
