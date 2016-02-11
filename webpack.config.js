@@ -1,12 +1,16 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const path = require('path');
 
-var config = {
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const config = {
   entry: {
     'vendor': './src/vendor',
     'app': './src/bootstrap'
   },
   output: {
-    filename: 'dist/[name].js'
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].js'
   },
   resolve: {
     extensions: ['', '.ts', '.es6', '.js', '.json']
@@ -14,8 +18,7 @@ var config = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
-      // Due to zone.js node_modules can't be excluded for ts
-      { test: /\.ts$/, loader: 'ts' },
+      { test: /\.ts$/, exclude: /node_modules/, loader: 'ts' },
       { test: /\.html/, loader: 'html?minimize=false' },
       { test: /\.styl$/, loader: 'raw!stylus' },
       { test: /\.css$/, loader: 'style!css' },
@@ -43,7 +46,8 @@ if (!(process.env.NODE_ENV === 'production')) {
     }),
     new webpack.DefinePlugin({
       'NODE_ENV': '"production"'
-    })
+    }),
+    new CopyWebpackPlugin([{ from: './src/index.html' }], {})
   ];
 }
 
