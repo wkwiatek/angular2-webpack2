@@ -1,4 +1,5 @@
-/// <reference path="./typings/webpack.d.ts" />
+///<reference path="../node_modules/angular2/typings/browser.d.ts"/>
+///<reference path="./typings/webpack.d.ts" />
 
 // polyfills
 import 'es6-shim';

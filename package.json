@@ -18,11 +18,11 @@
   "author": "wkwiatek <wojtek.kwiatek@gmail.com>",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "angular2": "https://github.com/angular/angular/tarball/2.0.0-build.22929a1.js",
+    "angular2": "https://github.com/angular/angular/tarball/2.0.0-build.f161b5c.js",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.34.0",
     "reflect-metadata": "^0.1.2",
-    "rxjs": "^5.0.0-beta.0",
+    "rxjs": "5.0.0-beta.0",
     "zone.js": "^0.5.10"
   },
   "devDependencies": {
@@ -42,7 +42,6 @@
     "raw-loader": "^0.5.1",
     "stylus-loader": "^1.4.2",
     "ts-loader": "^0.8.0",
-    "tsd": "^0.6.5",
     "typescript": "^1.7.3",
     "typings": "^0.6.6",
     "webpack": "^2.0.6-beta",
