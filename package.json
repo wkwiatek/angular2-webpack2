@@ -18,12 +18,12 @@
   "author": "wkwiatek <wojtek.kwiatek@gmail.com>",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "angular2": "https://github.com/angular/angular/tarball/2.0.0-build.f161b5c.js",
+    "angular2": "^2.0.0-beta.6",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.34.0",
     "reflect-metadata": "^0.1.2",
     "rxjs": "5.0.0-beta.0",
-    "zone.js": "^0.5.10"
+    "zone.js": "^0.5.14"
   },
   "devDependencies": {
     "babel-core": "^6.3.17",
