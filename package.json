@@ -18,12 +18,12 @@
   "author": "wkwiatek <wojtek.kwiatek@gmail.com>",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "angular2": "^2.0.0-beta.6",
+    "angular2": "^2.0.0-beta.7",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.34.0",
     "reflect-metadata": "^0.1.2",
-    "rxjs": "5.0.0-beta.0",
-    "zone.js": "^0.5.14"
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.5.15"
   },
   "devDependencies": {
     "babel-core": "^6.3.17",
@@ -44,7 +44,7 @@
     "ts-loader": "^0.8.0",
     "typescript": "^1.7.3",
     "typings": "^0.6.6",
-    "webpack": "^2.0.6-beta",
+    "webpack": "^2.1.0-beta",
     "webpack-dev-server": "^2.0.0-beta"
   }
 }
