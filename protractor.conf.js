@@ -1,7 +1,7 @@
 exports.config = {
   baseUrl: 'http://localhost:8080/',
 
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 10000,
 
   framework: 'jasmine',
 
@@ -16,8 +16,6 @@ exports.config = {
       'args': ['show-fps-counter=true']
     }
   },
-
-  seleniumServerJar: './node_modules/protractor/selenium/selenium-server-standalone-2.48.2.jar',
 
   specs: [
     'test/**/*.e2e.js'
