@@ -17,8 +17,8 @@ const config = {
   },
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
       { test: /\.ts$/, exclude: /node_modules/, loader: 'ts' },
+      { test: /\.json$/, loader: 'json' },
       { test: /\.html/, loader: 'html?minimize=false' },
       { test: /\.styl$/, loader: 'raw!stylus' },
       { test: /\.css$/, loader: 'style!css' },
@@ -38,12 +38,16 @@ if (!(process.env.NODE_ENV === 'production')) {
   ]
 } else {
   config.plugins = [
+    /* keep it until Angular team handle this for IE9-11 and mangling
     new webpack.optimize.UglifyJsPlugin({
       compress: {
+        screw_ie8: true,
         warnings: false
       },
-      comments: false
+      comments: false,
+      mangle: false
     }),
+    */
     new webpack.DefinePlugin({
       'NODE_ENV': '"production"'
     }),
