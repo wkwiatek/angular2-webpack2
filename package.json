@@ -4,7 +4,7 @@
   "description": "Angular 2",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack --progress --hide-modules",
+    "build": "WEBPACK_ENV=production webpack --progress --hide-modules",
     "dev": "webpack-dev-server --quiet --history-api-fallback --content-base ./src --open",
     "e2e": "protractor",
     "postinstall": "typings install && npm run webdriver-update",

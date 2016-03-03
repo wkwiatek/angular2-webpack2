@@ -29,27 +29,24 @@ const config = {
   }
 };
 
-if (!(process.env.NODE_ENV === 'production')) {
+if (!(process.env.WEBPACK_ENV === 'production')) {
   config.devtool = 'source-map';
   config.plugins = [
     new webpack.DefinePlugin({
-      'NODE_ENV': '"dev"'
+      'WEBPACK_ENV': '"dev"'
     })
   ]
 } else {
   config.plugins = [
-    /* keep it until Angular team handle this for IE9-11 and mangling
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         screw_ie8: true,
         warnings: false
       },
-      comments: false,
-      mangle: false
+      comments: false
     }),
-    */
     new webpack.DefinePlugin({
-      'NODE_ENV': '"production"'
+      'WEBPACK_ENV': '"production"'
     }),
     new CopyWebpackPlugin([{ from: './src/index.html' }], {})
   ];

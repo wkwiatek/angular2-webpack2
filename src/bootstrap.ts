@@ -1,6 +1,6 @@
 import {enableProdMode} from 'angular2/core';
 
-if (NODE_ENV === 'production') {
+if (WEBPACK_ENV === 'production') {
   enableProdMode();
 }
 
