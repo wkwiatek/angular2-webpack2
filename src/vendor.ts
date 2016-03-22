@@ -11,8 +11,11 @@ import 'es6-promise';
 // (these modules are what is in 'angular2/bundles/angular2-polyfills' so don't use that here)
 import 'reflect-metadata';
 
-import 'zone.js/dist/zone-microtask';
-import 'zone.js/dist/long-stack-trace-zone';
+import 'zone.js/dist/zone-node';
+
+if (WEBPACK_ENV !== 'production') {
+  require('zone.js/dist/long-stack-trace-zone');
+}
 
 // Angular 2 Deps
 import 'rxjs/Rx';
