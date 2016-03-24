@@ -6,7 +6,6 @@ import './ie-shims/ie-shims';
 
 // polyfills
 import 'es6-shim';
-import 'es6-promise';
 
 // (these modules are what is in 'angular2/bundles/angular2-polyfills' so don't use that here)
 import 'reflect-metadata';
