@@ -18,7 +18,7 @@
   "author": "wkwiatek <wojtek.kwiatek@gmail.com>",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "angular2": "2.0.0-beta.12",
+    "angular2": "2.0.0-beta.13",
     "es6-shim": "^0.35.0",
     "reflect-metadata": "^0.1.2",
     "rxjs": "5.0.0-beta.2",
@@ -40,7 +40,8 @@
     "karma-webpack": "^1.7.0",
     "protractor": "^3.0.0",
     "raw-loader": "^0.5.1",
-    "stylus-loader": "^1.4.2",
+    "stylus": "^0.54.2",
+    "stylus-loader": "^2.0.0",
     "ts-loader": "^0.8.0",
     "typescript": "^1.7.3",
     "typings": "^0.7.9",
