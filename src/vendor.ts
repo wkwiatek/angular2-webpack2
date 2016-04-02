@@ -10,7 +10,7 @@ import 'es6-shim';
 // (these modules are what is in 'angular2/bundles/angular2-polyfills' so don't use that here)
 import 'reflect-metadata';
 
-import 'zone.js/dist/zone-node';
+require('zone.js/dist/zone');
 
 if (WEBPACK_ENV !== 'production') {
   require('zone.js/dist/long-stack-trace-zone');
