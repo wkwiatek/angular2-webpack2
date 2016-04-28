@@ -16,6 +16,7 @@ module.exports = function(config) {
     files: [
       { pattern: 'node_modules/zone.js/dist/zone.js', included: true, watched: false },
       { pattern: 'node_modules/zone.js/dist/long-stack-trace-zone.js', included: true, watched: false },
+      { pattern: 'node_modules/zone.js/dist/async-test.js', included: true, watched: false },
       { pattern: 'node_modules/zone.js/dist/jasmine-patch.js', included: true, watched: false },
       { pattern: 'node_modules/reflect-metadata/Reflect.js', included: true, watched: false },
 
