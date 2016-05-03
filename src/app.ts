@@ -1,14 +1,17 @@
-import {Component} from 'angular2/core';
-import {RouteConfig, RouterOutlet} from 'angular2/router';
+import { Component } from '@angular/core';
+import { ROUTER_DIRECTIVES, Routes, Route } from '@angular/router';
 
-import {TestComponent} from './components/test';
+import { TestComponent } from './components/test';
 
 @Component({
   selector: 'app',
-  template: '<router-outlet></router-outlet>',
-  directives: [RouterOutlet]
+  template: `
+    <a [routerLink]="['/']" href="https://github.com/angular/angular/issues/8409"></a>
+    <router-outlet></router-outlet>
+  `,
+  directives: ROUTER_DIRECTIVES
 })
-@RouteConfig([
+@Routes([
   { path: '/', component: TestComponent }
 ])
 export class App {}

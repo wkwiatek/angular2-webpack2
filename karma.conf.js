@@ -21,7 +21,7 @@ module.exports = function(config) {
       { pattern: 'node_modules/reflect-metadata/Reflect.js', included: true, watched: false },
 
       { pattern: 'node_modules/rxjs/**', included: false, watched: false },
-      { pattern: 'node_modules/angular2/**/*.js', included: false, watched: false },
+      { pattern: 'node_modules/@angular/**/*.js', included: false, watched: false },
 
       { pattern: 'src/**/*.spec.ts', included: true }
     ],
