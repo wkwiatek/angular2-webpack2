@@ -7,6 +7,6 @@ if (WEBPACK_ENV === 'production') {
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { ROUTER_PROVIDERS } from '@angular/router';
 
-import { App } from './app';
+import { AppComponent } from './app.component';
 
-bootstrap(App, [ROUTER_PROVIDERS]);
+bootstrap(AppComponent, [ROUTER_PROVIDERS]);

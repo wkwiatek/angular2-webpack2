@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'test',
+  selector: 'sg-test',
   template: 'Hello from component: {{ test }}',
   styles: [require('./test.styl').toString()]
 })

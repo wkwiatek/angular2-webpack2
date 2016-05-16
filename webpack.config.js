@@ -16,6 +16,9 @@ const config = {
     extensions: ['', '.ts', '.es6', '.js', '.json']
   },
   module: {
+    preLoaders: [
+      { test: /\.ts$/, exclude: /node_modules/, loader: 'tslint' }
+    ],
     loaders: [
       { test: /\.ts$/, exclude: /node_modules/, loader: 'ts' },
       { test: /\.json$/, loader: 'json' },

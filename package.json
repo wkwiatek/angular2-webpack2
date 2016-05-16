@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "WEBPACK_ENV=production webpack --progress --hide-modules",
-    "dev": "webpack-dev-server --quiet --history-api-fallback --content-base ./src --open",
+    "dev": "webpack-dev-server --history-api-fallback --content-base ./src --open",
     "e2e": "protractor",
     "postinstall": "typings install && npm run webdriver-update",
     "test": "karma start",
@@ -33,6 +33,7 @@
   "devDependencies": {
     "babel-core": "^6.3.17",
     "babel-loader": "^6.2.0",
+    "codelyzer": "0.0.19",
     "copy-webpack-plugin": "^3.0.0",
     "css-loader": "^0.23.0",
     "file-loader": "^0.8.4",
@@ -49,6 +50,8 @@
     "stylus": "^0.54.2",
     "stylus-loader": "^2.0.0",
     "ts-loader": "^0.8.0",
+    "tslint": "^3.10.2",
+    "tslint-loader": "^2.1.4",
     "typescript": "^1.7.3",
     "typings": "^0.8.0",
     "webpack": "^2.1.0-beta",
