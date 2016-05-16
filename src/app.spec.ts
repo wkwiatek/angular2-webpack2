@@ -6,7 +6,6 @@ import {
   it,
 } from '@angular/core/testing';
 import {
-  ComponentFixture,
   TestComponentBuilder,
 } from '@angular/compiler/testing';
 import { ROUTER_FAKE_PROVIDERS } from '@angular/router/testing';
@@ -26,7 +25,7 @@ describe('App', () => {
   beforeEachProviders(() => [ROUTER_FAKE_PROVIDERS])
 
   it('should be able to test', inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-    return tcb.createAsync(App).then((componentFixture: ComponentFixture) => {
+    return tcb.createAsync(App).then(componentFixture => {
       componentFixture.detectChanges();
       expect(true).toBe(true);
     });
