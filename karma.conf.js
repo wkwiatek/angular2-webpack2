@@ -56,10 +56,10 @@ module.exports = function(config) {
       stats: { colors: true, reasons: true },
       debug: false
     },
-
-    webpackMiddleware: {
-      noInfo: true //please don't spam the console when running in karma!
-    },
+    //
+    // webpackMiddleware: {
+    //   noInfo: true //please don't spam the console when running in karma!
+    // },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'

@@ -53,8 +53,8 @@
     "tslint": "^3.10.2",
     "tslint-loader": "^2.1.4",
     "typescript": "^1.7.3",
-    "typings": "^0.8.0",
-    "webpack": "^2.1.0-beta",
-    "webpack-dev-server": "^2.0.0-beta"
+    "typings": "^1.0.0",
+    "webpack": "2.1.0-beta.5",
+    "webpack-dev-server": "^2.1.0-beta.0"
   }
 }
