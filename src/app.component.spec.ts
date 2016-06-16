@@ -21,6 +21,7 @@ setBaseTestProviders(TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS, TEST_BROWSER_DYNAM
 
 describe('App', () => {
 
+  // TODO: change router to v3 
   beforeEachProviders(() => [ROUTER_FAKE_PROVIDERS])
 
   it('should be able to test', inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
