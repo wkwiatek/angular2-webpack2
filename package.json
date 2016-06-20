@@ -7,7 +7,7 @@
     "build": "WEBPACK_ENV=production webpack --progress --hide-modules",
     "dev": "webpack-dev-server --history-api-fallback --content-base ./src --open",
     "e2e": "protractor",
-    "postinstall": "typings install && npm run webdriver-update",
+    "postinstall": "rm -rf typings && typings install && npm run webdriver-update",
     "test": "karma start",
     "webdriver-update": "webdriver-manager update"
   },
@@ -44,7 +44,7 @@
     "karma-jasmine": "^1.0.0",
     "karma-mocha-reporter": "^2.0.0",
     "karma-sourcemap-loader": "^0.3.6",
-    "karma-webpack": "^1.7.0",
+    "karma-webpack": "https://github.com/goldhand/karma-webpack#master",
     "protractor": "^3.0.0",
     "raw-loader": "^0.5.1",
     "stylus": "^0.54.2",
@@ -54,7 +54,7 @@
     "tslint-loader": "^2.1.4",
     "typescript": "^1.7.3",
     "typings": "^1.0.0",
-    "webpack": "2.1.0-beta.5",
+    "webpack": "^2.1.0-beta.13",
     "webpack-dev-server": "^2.1.0-beta.0"
   }
 }
