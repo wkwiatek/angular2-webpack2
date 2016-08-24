@@ -1,6 +1,6 @@
-var ENV_PRODUCTION = process.env.NODE_ENV;
+const ENV_PRODUCTION = process.env.WEBPACK_ENV === 'production';
 
-module.exports = function(config) {
+module.exports = config => {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -9,21 +9,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'source-map-support'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: 'node_modules/zone.js/dist/zone.js', included: true, watched: false },
-      { pattern: 'node_modules/zone.js/dist/long-stack-trace-zone.js', included: true, watched: false },
-      { pattern: 'node_modules/zone.js/dist/async-test.js', included: true, watched: false },
-      { pattern: 'node_modules/zone.js/dist/jasmine-patch.js', included: true, watched: false },
-      { pattern: 'node_modules/reflect-metadata/Reflect.js', included: true, watched: false },
-
-      { pattern: 'node_modules/rxjs/**', included: false, watched: false },
-      { pattern: 'node_modules/@angular/**/*.js', included: false, watched: false },
-
-      { pattern: 'src/**/*.spec.ts', included: true }
+      './karma.entry.ts'
     ],
 
 
@@ -35,17 +26,28 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.spec.ts': ['webpack', 'sourcemap']
+      './karma.entry.ts': ['webpack']
+    },
+
+    coverageReporter: {
+      dir: 'coverage',
+      reporters: [{
+        type: 'json',
+        subdir: '.',
+        file: 'coverage.json'
+      }]
     },
 
     webpack: {
       devtool: 'inline-source-map',
       resolve: {
-        extensions: ['', '.ts', '.es6', '.js', '.json']
+        extensions: ['', '.ts', '.js', '.json']
       },
       module: {
+        postLoaders: [
+          { test: /\.ts$/, exclude: ['node_modules', /\.spec.ts$/], loader: 'istanbul-instrumenter' }
+        ],
         loaders: [
-          { test: /\.js$/, exclude: /node_modules/, loader: 'babel', query: { stage: 0 } },
           { test: /\.ts$/, exclude: /node_modules/, loader: 'ts' },
           { test: /\.html/, loader: 'raw' },
           { test: /\.styl$/, loader: 'css!stylus' },
@@ -56,15 +58,15 @@ module.exports = function(config) {
       stats: { colors: true, reasons: true },
       debug: false
     },
-    //
-    // webpackMiddleware: {
-    //   noInfo: true //please don't spam the console when running in karma!
-    // },
+
+    webpackMiddleware: {
+      noInfo: true //please don't spam the console when running in karma!
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha'],
+    reporters: ['mocha', 'coverage'],
 
 
     // web server port
