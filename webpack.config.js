@@ -13,13 +13,11 @@ const config = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.ts', '.es6', '.js', '.json']
+    extensions: ['.ts', '.es6', '.js', '.json']
   },
   module: {
-    preLoaders: [
-      { test: /\.ts$/, exclude: /node_modules/, loader: 'tslint' }
-    ],
-    loaders: [
+    rules: [
+      { enforce: 'pre', test: /\.ts$/, exclude: /node_modules/, loader: 'tslint' },
       { test: /\.ts$/, exclude: /node_modules/, loader: 'ts' },
       { test: /\.json$/, loader: 'json' },
       { test: /\.html/, loader: 'html?minimize=false' },
