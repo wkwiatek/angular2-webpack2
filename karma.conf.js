@@ -41,13 +41,11 @@ module.exports = config => {
     webpack: {
       devtool: 'inline-source-map',
       resolve: {
-        extensions: ['', '.ts', '.js', '.json']
+        extensions: ['.ts', '.js', '.json']
       },
       module: {
-        postLoaders: [
-          { test: /\.ts$/, exclude: ['node_modules', /\.spec.ts$/], loader: 'istanbul-instrumenter' }
-        ],
-        loaders: [
+        rules: [
+          // { enforce: 'pre', test: /\.ts$/, exclude: ['node_modules', /\.spec.ts$/], loader: 'istanbul-instrumenter' },
           { test: /\.ts$/, exclude: /node_modules/, loader: 'ts' },
           { test: /\.html/, loader: 'raw' },
           { test: /\.styl$/, loader: 'css!stylus' },
@@ -56,7 +54,6 @@ module.exports = config => {
         ]
       },
       stats: { colors: true, reasons: true },
-      debug: false
     },
 
     webpackMiddleware: {
