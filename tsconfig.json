@@ -9,11 +9,10 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "types": ["node", "jasmine"]
   },
   "exclude": [
-    "node_modules",
-    "typings/main.d.ts",
-    "typings/main"
+    "node_modules"
   ]
 }
