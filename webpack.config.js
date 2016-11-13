@@ -27,18 +27,25 @@ const config = {
       { test: /\.woff2?$/, loader: 'url?name=dist/fonts/[name].[ext]&limit=10000&mimetype=application/font-woff' },
       { test: /\.(ttf|eot|svg)$/, loader: 'file?name=dist/fonts/[name].[ext]' }
     ]
-  }
+  },
+  plugins: [
+    // Fixes Angular 2 error
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      __dirname
+    )
+  ]
 };
 
 if (!(process.env.WEBPACK_ENV === 'production')) {
   config.devtool = 'source-map';
-  config.plugins = [
+  config.plugins = config.plugins.concat([
     new webpack.DefinePlugin({
       'WEBPACK_ENV': '"dev"'
     })
-  ]
+  ])
 } else {
-  config.plugins = [
+  config.plugins = config.plugins.concat([
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         screw_ie8: true,
@@ -50,7 +57,7 @@ if (!(process.env.WEBPACK_ENV === 'production')) {
       'WEBPACK_ENV': '"production"'
     }),
     new CopyWebpackPlugin([{ from: './src/index.html' }], {})
-  ];
+  ]);
 }
 
 module.exports = config;
