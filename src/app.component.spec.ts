@@ -3,6 +3,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { async, TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
+import { APP_BASE_HREF } from '@angular/common';
 
 TestBed.initTestEnvironment(
   BrowserDynamicTestingModule,
@@ -18,7 +19,8 @@ describe('App', () => {
       ],
       imports: [
         RouterModule.forRoot([])
-      ]
+      ],
+      providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
     });
   });
 
