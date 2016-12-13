@@ -46,11 +46,11 @@ module.exports = config => {
       module: {
         rules: [
           // { enforce: 'pre', test: /\.ts$/, exclude: ['node_modules', /\.spec.ts$/], loader: 'istanbul-instrumenter' },
-          { test: /\.ts$/, exclude: /node_modules/, loader: 'ts' },
-          { test: /\.html/, loader: 'raw' },
-          { test: /\.styl$/, loader: 'css!stylus' },
-          { test: /\.css$/, loader: 'css' },
-          { test: /\.(gif|png|jpe?g)$/i, loader: 'file' }
+          { test: /\.ts$/, exclude: /node_modules/, loader: 'ts-loader' },
+          { test: /\.html/, loader: 'raw-loader' },
+          { test: /\.styl$/, loader: 'css-loader!stylus-loader' },
+          { test: /\.css$/, loader: 'css-loader' },
+          { test: /\.(gif|png|jpe?g)$/i, loader: 'file-loader' }
         ]
       },
       stats: { colors: true, reasons: true },
