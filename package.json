@@ -44,7 +44,7 @@
     "babel-loader": "^6.2.0",
     "codelyzer": "^2.0.0-beta.2",
     "copy-webpack-plugin": "^4.0.0",
-    "css-loader": "^0.25.0",
+    "css-loader": "^0.26.0",
     "file-loader": "^0.9.0",
     "istanbul-instrumenter-loader": "^1.0.0",
     "jasmine-core": "^2.4.1",
@@ -63,10 +63,10 @@
     "stylus": "^0.54.2",
     "stylus-loader": "^2.0.0",
     "ts-loader": "^1.2.0",
-    "tslint": "^4.0.0",
+    "tslint": "^4.1.1",
     "tslint-loader": "^3.3.0",
     "typescript": "^2.0.0",
-    "webpack": "2.1.0-beta.28",
-    "webpack-dev-server": "^2.1.0-beta.0"
+    "webpack": "^2.2.0-rc.1",
+    "webpack-dev-server": "^2.2.0-rc.0"
   }
 }

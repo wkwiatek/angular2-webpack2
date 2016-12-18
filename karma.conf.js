@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 const ENV_PRODUCTION = process.env.WEBPACK_ENV === 'production';
 
 module.exports = config => {
@@ -45,7 +47,7 @@ module.exports = config => {
       },
       module: {
         rules: [
-          // { enforce: 'pre', test: /\.ts$/, exclude: ['node_modules', /\.spec.ts$/], loader: 'istanbul-instrumenter' },
+          // { enforce: 'pre', test: /\.ts$/, exclude: ['node_modules', /\.spec.ts$/], loader: 'istanbul-instrumenter-loader' },
           { test: /\.ts$/, exclude: /node_modules/, loader: 'ts-loader' },
           { test: /\.html/, loader: 'raw-loader' },
           { test: /\.styl$/, loader: 'css-loader!stylus-loader' },
@@ -54,6 +56,13 @@ module.exports = config => {
         ]
       },
       stats: { colors: true, reasons: true },
+      plugins: [
+        // Fixes Angular 2 error
+        new webpack.ContextReplacementPlugin(
+          /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+          __dirname
+        )
+      ]
     },
 
     webpackMiddleware: {
@@ -63,7 +72,7 @@ module.exports = config => {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha', 'coverage'],
+    reporters: ['mocha'],
 
 
     // web server port
@@ -89,6 +98,12 @@ module.exports = config => {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: ENV_PRODUCTION ? true : false
+    singleRun: ENV_PRODUCTION ? true : false,
+
+    // fix for Chrome 55
+    mime: {
+      'text/x-typescript': ['ts','tsx']
+    },
+
   });
 };
